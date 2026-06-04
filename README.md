@@ -50,39 +50,6 @@ instagram-psm-analysis/
 ---
 
 ## Dataset
-# Instagram Ads A/B Testing — Propensity Score Matching
-
-This project analyzes the effectiveness of Instagram ad campaigns using A/B testing, with a focus on reducing selection bias through **Propensity Score Matching (PSM)**. Rather than comparing treated and control users directly (which can be misleading if the groups aren't similar), we first build a matched dataset where both groups share comparable baseline characteristics — then measure the true conversion lift.
-
----
-
-## The Problem
-
-In observational A/B tests, the treatment and control groups are often not naturally balanced. Users who saw an ad may differ from those who didn't — in age, device, engagement history, and more. A raw comparison of conversion rates would mix the treatment effect with these pre-existing differences.
-
-PSM solves this by pairing each treated user with a control user who "looks" as similar as possible — so the only meaningful difference left is whether they were treated.
-
----
-
-## Project Structure
-
-```
-instagram-psm-analysis/
-│
-├── data/
-│   └── Instagram_Ads_Data_Dictionary.xlsx   # Column definitions and metadata
-│
-├── notebooks/
-│   ├── 01_Instagram_Day_001_EDA.html                        # Exploratory data analysis
-│   ├── 02_Instagram_PSM_Logistic_Caliper_Matching.ipynb     # PSM via logistic regression + caliper
-│   └── 03_Instagram_PSM_KNN_Matching.ipynb                  # PSM via K-Nearest Neighbors
-│
-└── README.md
-```
-
----
-
-## Dataset
 
 The data comes from `workspace.instagram.instagram_extract_data_v_3` — an internal Instagram ads extract containing user-level behavioral and demographic attributes.
 
